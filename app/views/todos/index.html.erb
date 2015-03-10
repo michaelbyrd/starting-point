@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Todos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="10">Task</th>
+      <th colspan="2">Complete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todos.each do |todo| %>
+      <tr>
+        <td colspan="10"><%= todo.task %></td>
+        <td colspan="2"><%= check_box_tag todo.id, todo.complete, todo.complete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Todo', new_todo_path %>
